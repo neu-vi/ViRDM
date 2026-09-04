@@ -1,0 +1,115 @@
+artifact_root: ${oc.env:VIRDM_ARTIFACT_ROOT,artifacts}
+generator_ckpt: ${artifact_root}/checkpoints/chunkwise/causal_ode.pt
+generator_ckpt_sha256: 34a8aa8e078a7782ad9496991f44daac17c6bb13b83a1214292872186f8a941a
+resume_ckpt: ""
+
+generator_fsdp_wrap_strategy: transformer
+generator_fsdp_transformer_modules: [causal_wan_block]
+generator_fsdp_min_num_params: 1000000
+generator_cpu_offload: false
+text_encoder_fsdp_wrap_strategy: none
+text_encoder_cpu_offload: false
+sharding_strategy: full
+
+denoising_step_list: [1000, 750, 500, 250]
+warp_denoising_step: true
+mixed_precision: true
+seed: 0
+virdm_attention_backend: flash_attn_2
+virdm_flash_attn_version: 2.8.3.post1
+virdm_require_flash_attention: true
+
+wandb_host: ""
+wandb_key: null
+wandb_entity: ""
+wandb_project: virdm
+wandb_mode: ${oc.env:WANDB_MODE,online}
+
+lr: 2.0e-6
+beta1: 0.9
+beta2: 0.95
+weight_decay: 0.0
+batch_size: 1
+max_grad_norm_generator: 10.0
+max_steps: 20
+log_iters: 20
+gc_interval: 100
+
+trainer: virdm
+distribution_loss: virdm
+gradient_checkpointing: true
+generator_activation_cpu_offload: true
+num_frame_per_block: 3
+num_training_frames: 21
+same_step_across_blocks: true
+last_step_only: false
+context_noise: 0
+independent_first_frame: false
+i2v: false
+model_kwargs:
+  timestep_shift: 5.0
+
+data_path: ${artifact_root}/prompt_data
+prompt_embedding_cache_path: ""
+dataloader_num_workers: 0
+lmdb_readahead: false
+
+virdm_reference_revision: virdm_joint_reference_v1
+virdm_reference_bundle_path: ${artifact_root}/references/reference_M4096.pt
+virdm_reference_bundle_sha256: d47318e3436f1233c383d1cfe2c90b2c2fc45fcffc360031837f39ea3fe38542
+virdm_expected_reference_rows: 6505
+
+virdm_encoder_id: vjepa2_1_vit_large_384
+virdm_encoder_checkpoint_path: ${artifact_root}/vjepa/vjepa2_1_vitl_dist_vitG_384.pt
+virdm_encoder_checkpoint_sha256: 7ea9b7cb4a75d10644a8a8d42cff9e177b10dca8f02173f0eaf2b0bed82838c6
+virdm_encoder_checkpoint_key: ema_encoder
+virdm_encoder_activation_checkpointing: true
+virdm_input_mode: native_video
+virdm_input_height: 480
+virdm_input_width: 832
+virdm_pool: global_mean_all_tokens
+virdm_feature_dim: 1024
+virdm_video_frames: 81
+virdm_video_padded_frames: 82
+virdm_video_temporal_pad: replicate_last
+virdm_joint_text_encoder_id: ViT-SO400M-16-SigLIP2-256
+virdm_joint_text_encoder_pretrained: webli
+virdm_joint_text_table_path: ${artifact_root}/references/siglip2_text_fp32.npy
+virdm_joint_text_table_sha256: e745019f8ecfe7538a613b5ec6b37bcd2545a101c4596e6459c804ab16930343
+virdm_joint_prompt_rows_sha256: cda3ac87f438454898bbb84ec2d340c296fc01601687ca6c45df1f8274a3beb3
+virdm_joint_text_feature_dim: 1152
+virdm_joint_bandwidth_scale: 1.0
+virdm_joint_feature_dim: 2176
+
+virdm_taew_checkpoint_path: ${artifact_root}/taew/taew2_1.pth
+virdm_taew_checkpoint_sha256: d26151e76cdc2c9424bef988de874b33d9a53f30ef3060cd556c429c469c797e
+
+virdm_grad_accum_steps: 8
+virdm_expected_world_size: 8
+virdm_expected_local_world_size: 8
+virdm_expected_global_rows: 64
+virdm_kernel_gen_chunk: 4096
+virdm_nystrom_landmarks: 4096
+virdm_self_normalize_eps: 1.0e-7
+virdm_feature_replay_atol: 1.0e-4
+virdm_rollout_replay_atol: 1.0e-4
+virdm_log_rollout_video: true
+virdm_rollout_video_fps: 16
+
+virdm_dynamic_reg_enabled: false
+virdm_dynamic_reg_checkpoint_path: ${artifact_root}/flow/dense_flow.pth
+virdm_dynamic_reg_checkpoint_sha256: fcfa4125d6418f4de95d84aec20a3c5f4e205101715a79f193243c186ac9a7e1
+virdm_dynamic_reg_video_fps: 16.0
+virdm_dynamic_reg_eval_fps: 8.0
+virdm_dynamic_reg_iters: 20
+virdm_dynamic_reg_pair_batch: 4
+virdm_dynamic_reg_required_hits: 10
+virdm_dynamic_reg_flow_threshold: 11.25
+virdm_dynamic_reg_weight: 5.0e-4
+
+virdm_generation_mode: chunkwise
+virdm_first_frame_denoising_step_list: []
+virdm_replay_first_frame_trajectory_noise: false
+virdm_all_chunks_random_x0_4step: true
+virdm_log_rollout_force_all_chunks_full: true
+virdm_bidirectional_random_x0_4step: false

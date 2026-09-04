@@ -1,0 +1,17 @@
+# Supported target: Linux x86_64 with NVIDIA GPUs.
+name: virdm
+channels:
+  - nvidia/label/cuda-12.4.1
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.10
+  - pip
+  - nvidia/label/cuda-12.4.1::cuda-toolkit=12.4.1
+  - cuda-version=12.4
+  - nvidia/label/cuda-12.4.1::cuda-nvcc=12.4
+  - gxx_linux-64=12
+  - make
+  - git
+  - pkg-config
+# Install PyTorch before native extensions using the setup script.

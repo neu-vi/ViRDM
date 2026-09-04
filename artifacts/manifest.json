@@ -1,0 +1,90 @@
+{
+  "format": "virdm_artifacts_v1",
+  "official": {
+    "wan_2_1_t2v_1_3b": {
+      "repo_id": "Wan-AI/Wan2.1-T2V-1.3B",
+      "revision": "37ec512624d61f7aa208f7ea8140a131f93afc9a",
+      "target": "wan/Wan2.1-T2V-1.3B",
+      "file_sha256": {
+        "config.json": "ab37994c43740513f94b3ba6233a784035a67b43c8cde83c8f31aa90468c67ce",
+        "diffusion_pytorch_model.safetensors": "96b6b242ca1c2f24e9d02cd6596066fab6d310e2d7538f33ae267cb18d957e8f",
+        "models_t5_umt5-xxl-enc-bf16.pth": "7cace0da2b446bbbbc57d031ab6cf163a3d59b366da94e5afe36745b746fd81d",
+        "Wan2.1_VAE.pth": "38071ab59bd94681c686fa51d75a1968f64e470262043be31f7a094e442fd981",
+        "google/umt5-xxl/tokenizer.json": "6e197b4d3dbd71da14b4eb255f4fa91c9c1f2068b20a2de2472967ca3d22602b",
+        "google/umt5-xxl/spiece.model": "e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458",
+        "google/umt5-xxl/special_tokens_map.json": "7b8a9f5040adb67b5805abdfd42c1f8d0f3d0e711f10726580eb3789cd0ad61d",
+        "google/umt5-xxl/tokenizer_config.json": "ed9a3a8b0faa71a70a32847e0435fe036e6e112d4df4edb7bb48a921e344dc05"
+      }
+    },
+    "causal_ode_chunkwise": {
+      "repo_id": "zhuhz22/Causal-Forcing",
+      "revision": "2f8eb8bb6eeb1238da9d13e5420d342a74d634a6",
+      "filename": "chunkwise/causal_ode.pt",
+      "target": "checkpoints/chunkwise/causal_ode.pt",
+      "sha256": "34a8aa8e078a7782ad9496991f44daac17c6bb13b83a1214292872186f8a941a"
+    },
+    "vjepa_2_1_vitl_384": {
+      "url": "https://dl.fbaipublicfiles.com/vjepa2/vjepa2_1_vitl_dist_vitG_384.pt",
+      "target": "vjepa/vjepa2_1_vitl_dist_vitG_384.pt",
+      "sha256": "7ea9b7cb4a75d10644a8a8d42cff9e177b10dca8f02173f0eaf2b0bed82838c6"
+    },
+    "taew_2_1": {
+      "url": "https://github.com/madebyollin/taehv/raw/e743234f3217ab3d1570f65642ab06596d1bd7c5/taew2_1.pth",
+      "target": "taew/taew2_1.pth",
+      "sha256": "d26151e76cdc2c9424bef988de874b33d9a53f30ef3060cd556c429c469c797e"
+    },
+    "siglip_2_so400m_256": {
+      "repo_id": "timm/ViT-SO400M-16-SigLIP2-256",
+      "revision": "8b4c2efdfd48e0d72644df99ed5dc20c110fc352",
+      "target": "siglip2",
+      "file_sha256": {
+        "open_clip_model.safetensors": "c824f8bb65616a30b57f32e62ca3f4a10287b00f263c989706093cd20daaa4f0",
+        "tokenizer.json": "220c63d496e0c14e63eb656c91e0215e926202e4c74b1f089e09f1920d779b04",
+        "tokenizer_config.json": "513e778583a9ac0b74ae47784216f9d654d5132eee62d777597f5e842701323c",
+        "special_tokens_map.json": "d4671afd8f9b1ccd170443bd5478c0cc40fdbddc9343034caf6984ffd388b2c4"
+      }
+    },
+    "dense_flow": {
+      "archive_url": "https://dl.dropboxusercontent.com/s/4j4z58wuv8o0mfz/models.zip",
+      "archive_member": "models/raft-things.pth",
+      "target": "flow/dense_flow.pth",
+      "sha256": "fcfa4125d6418f4de95d84aec20a3c5f4e205101715a79f193243c186ac9a7e1"
+    }
+  },
+  "virdm_training_assets": {
+    "repo_id": "cr8br0ze/ViRDM",
+    "repo_type": "model",
+    "revision": "b77aad226f97cf15e36caa9afac7db07713c96c7",
+    "files": {
+      "prompt_data/data.mdb": {
+        "target": "prompt_data/data.mdb",
+        "sha256": "1590271fa9efd869679296371a203fc01c513c73cfe7c0805c957cc3cbc5e84c"
+      },
+      "references/reference_M4096.pt": {
+        "target": "references/reference_M4096.pt",
+        "sha256": "d47318e3436f1233c383d1cfe2c90b2c2fc45fcffc360031837f39ea3fe38542"
+      },
+      "references/siglip2_text_fp32.npy": {
+        "target": "references/siglip2_text_fp32.npy",
+        "sha256": "e745019f8ecfe7538a613b5ec6b37bcd2545a101c4596e6459c804ab16930343"
+      }
+    },
+    "expected_prompt_rows": 6505,
+    "prompt_rows_sha256": "cda3ac87f438454898bbb84ec2d340c296fc01601687ca6c45df1f8274a3beb3"
+  },
+  "virdm_checkpoints": {
+    "repo_id": "cr8br0ze/ViRDM",
+    "repo_type": "model",
+    "revision": "b77aad226f97cf15e36caa9afac7db07713c96c7",
+    "files": {
+      "checkpoints/virdm_causal4_nodynamic_step20.pt": {
+        "target": "checkpoints/virdm/virdm_causal4_nodynamic_step20.pt",
+        "sha256": "8186ff724a51018fdc2ce33ed95e767aacbec08ea5bb325eee1040b0d739e5b2"
+      },
+      "checkpoints/virdm_causal4_dynamic_step20.pt": {
+        "target": "checkpoints/virdm/virdm_causal4_dynamic_step20.pt",
+        "sha256": "bc66de80b2c28ffdbb9f21b764436a35bd1d4643c393f2ebbfe9130b6d6320fd"
+      }
+    }
+  }
+}
