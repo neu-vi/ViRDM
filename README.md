@@ -323,6 +323,11 @@ bash scripts/eval_vbench.sh \
 ## Acknowledgements
 
 We thank the authors of
+[RDM](https://github.com/vita-epfl/RDM) for their work on image representation
+distribution matching, which provides the foundation for ViRDM's video
+post-training recipe.
+
+We thank the authors of
 [Wan2.1](https://github.com/Wan-Video/Wan2.1),
 [Causal Forcing](https://github.com/thu-ml/Causal-Forcing),
 [Self-Forcing](https://github.com/guandeh17/Self-Forcing), and
