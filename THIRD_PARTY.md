@@ -5,7 +5,7 @@ license texts are retained in the repository.
 
 | Component | Upstream | Use | License |
 |---|---|---|---|
-| RDM | [vita-epfl/RDM](https://github.com/vita-epfl/RDM) | methodological foundation, reference distribution calculation, and loss calculation | [MIT](https://github.com/vita-epfl/RDM/blob/main/LICENSE) |
+| RDM | [vita-epfl/RDM](https://github.com/vita-epfl/RDM) | method foundation, reference distribution calculation, and loss calculation | [MIT](https://github.com/vita-epfl/RDM/blob/main/LICENSE) |
 | Wan2.1 | [Wan-Video/Wan2.1](https://github.com/Wan-Video/Wan2.1) | generator, text encoder, VAE | Apache-2.0 |
 | FlashAttention 2 | [Dao-AILab/flash-attention](https://github.com/Dao-AILab/flash-attention) `2.8.3.post1` | causal generator attention backend used for reported training runtime | BSD-3-Clause |
 | Self-Forcing | [guandeh17/Self-Forcing](https://github.com/guandeh17/Self-Forcing) at `33593df3e81fa3ec10239271dd2c100facac6de1` | causal generator architecture, stochastic-exit rollout, and extended VBench generation prompts | Apache-2.0 |
